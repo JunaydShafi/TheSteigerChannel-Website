@@ -1,0 +1,239 @@
+/* Reset-ish */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Page container */
+main {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 24px;
+  background: white;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: #222;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px 0;
+}
+
+/* Links */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =====================
+   HEADER / BANNER
+   ===================== */
+
+.banner {
+  background-color: #55c233;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 16px 28px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Centered title */
+.banner h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 3rem;
+  color: black;
+  white-space: nowrap;
+    letter-spacing: 1px;
+  text-transform: uppercase;
+
+font-weight: 900;
+
+}
+
+
+
+/* YouTube link */
+.banner a {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+/* YouTube logo */
+.youtube-logo {
+  height: 56px;
+  width: auto;
+  max-width: 220px;
+  display: block;
+  cursor: pointer;
+  object-fit: contain;
+    margin-right: 30px;
+}
+
+.youtube-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .banner {
+    padding: 12px 16px;
+  }
+
+  .banner h1 {
+    font-size: 1.5rem;
+  }
+
+  .youtube-logo {
+    height: 40px;
+    max-width: 150px;
+  }
+}
+
+/* Safety: prevent horizontal scroll */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.main-photo {
+  display: block;
+  margin: 0 auto 20px auto; /* centered + space below */
+  max-width: 100%;
+  height: auto;
+}
+
+.brand-title {
+  margin: 28px 0 8px;
+  font-size: 1.6rem;
+}
+
+/* horizontal scroll row */
+.tractor-strip {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 10px 6px 18px;
+  scroll-snap-type: x mandatory;
+}
+
+/* same-sized thumbnails */
+.tractor-thumb {
+  flex: 0 0 auto;
+  width: 220px;
+  height: 120px;
+  object-fit: cover;
+  margin: 0;              /* overrides your global img margin */
+  border-radius: 6px;
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+/* optional: subtle hover */
+.tractor-thumb:hover {
+  transform: scale(1.02);
+}
+
+h2 {
+  text-align: center;
+  margin-top: 60px; 
+}
+
+.tractor-strip a {
+  display: flex;
+}
+
+/* Gallery slider */
+.gallery-strip {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 10px 6px 18px;
+  justify-content: center;      /* centered when they fit */
+  scroll-snap-type: x mandatory;
+}
+
+/* make the clickable area behave */
+.gallery-strip a {
+  display: flex;
+  text-decoration: none;
+}
+
+/* same size images like a slide strip */
+.gallery-img {
+  flex: 0 0 auto;
+  width: 260px;
+  height: 160px;
+  object-fit: cover;
+  margin: 0;                    /* overrides global img margins */
+  border-radius: 6px;
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+.gallery-img:hover {
+  transform: scale(1.02);
+}
+
+.suggestion-form {
+  margin: 18px auto 0;
+  max-width: 900px;
+  display: grid;
+  gap: 10px;
+}
+
+.suggestion-form label {
+  font-weight: 700;
+}
+
+.suggestion-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+  resize: vertical;
+}
+
+.suggestion-form button {
+  width: fit-content;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: #55c233;
+  color: #000;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.suggestion-form button:hover {
+  filter: brightness(0.95);
+}
